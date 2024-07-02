@@ -1,0 +1,14 @@
+<app-header></app-header>
+<div id ="cards">
+  <div class="card" *ngFor="let item of paginatedData">
+    <li class="name">{{item.name}}</li>
+    <img src={{item.img}} alt="image" class="image"/>
+    <li class="price">{{item.price}}</li>
+    <li class="desc">{{item.desc}}</li>
+    <li class="categ">{{item.category}}</li>
+  </div>
+</div>
+
+<app-pagination [totalItems] ="items.length"[itemsPerPage]="itemsPerPage"
+[currentPage]="currentPage"
+(onClick)="changePage($event)"></app-pagination>
